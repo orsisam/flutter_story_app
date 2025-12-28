@@ -286,14 +286,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.1.1"
-  flutter_bloc_effects:
-    dependency: "direct main"
-    description:
-      name: flutter_bloc_effects
-      sha256: cea46c1da929a26739ba80cf4d8324763016f7daaaa8436c4b70952e3e5ad94c
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   flutter_cache_manager:
     dependency: transitive
     description:
