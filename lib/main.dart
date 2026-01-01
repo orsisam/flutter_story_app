@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_story_app/bloc_provider.dart';
 import 'package:flutter_story_app/core/constants/app_colors.dart';
 import 'package:flutter_story_app/presentation/splash/pages/splash_page.dart';
 
@@ -23,11 +24,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Story App',
-      debugShowCheckedModeBanner: false,
-      theme: _buildTheme(),
-      home: const SplashPage(),
+    return MultiBlocProvider(
+      providers: blocProviders,
+      child: MaterialApp(
+        title: 'Story App',
+        debugShowCheckedModeBanner: false,
+        theme: _buildTheme(),
+        home: const SplashPage(),
+      ),
     );
   }
 
