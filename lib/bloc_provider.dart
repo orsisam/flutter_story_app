@@ -22,17 +22,23 @@ final StoryRemoteDatasource _storyDatasource = StoryRemoteDatasource();
 List<BlocProvider> get blocProviders => [
   // Auth BLoCs
   BlocProvider<LoginBloc>(create: (_) => LoginBloc(_authDatasource)),
-  BlocProvider(create: (_) => RegisterBloc(_authDatasource)),
-  BlocProvider(create: (_) => LogoutBloc(_authDatasource)),
+  BlocProvider<RegisterBloc>(create: (_) => RegisterBloc(_authDatasource)),
+  BlocProvider<LogoutBloc>(create: (_) => LogoutBloc(_authDatasource)),
 
   // Profile BLoC
-  BlocProvider(create: (_) => GetProfileBloc(_authDatasource)),
+  BlocProvider<GetProfileBloc>(create: (_) => GetProfileBloc(_authDatasource)),
 
   // Story BLoCs
-  BlocProvider(create: (_) => GetStoriesBloc(_storyDatasource)),
-  BlocProvider(create: (_) => CreateStoryBloc(_storyDatasource)),
-  BlocProvider(create: (_) => UpdateStoryBloc(_storyDatasource)),
-  BlocProvider(create: (_) => DeleteStoryBloc(_storyDatasource)),
+  BlocProvider<GetStoriesBloc>(create: (_) => GetStoriesBloc(_storyDatasource)),
+  BlocProvider<CreateStoryBloc>(
+    create: (_) => CreateStoryBloc(_storyDatasource),
+  ),
+  BlocProvider<UpdateStoryBloc>(
+    create: (_) => UpdateStoryBloc(_storyDatasource),
+  ),
+  BlocProvider<DeleteStoryBloc>(
+    create: (_) => DeleteStoryBloc(_storyDatasource),
+  ),
 ];
 
 // ================================
