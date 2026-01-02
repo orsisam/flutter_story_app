@@ -464,12 +464,12 @@ _$SuccessCopyWith<_Success> get copyWith => __$SuccessCopyWithImpl<_Success>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success&&const DeepCollectionEquality().equals(other.user, user));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success&&(identical(other.user, user) || other.user == user));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(user));
+int get hashCode => Object.hash(runtimeType,user);
 
 @override
 String toString() {
@@ -501,9 +501,9 @@ class __$SuccessCopyWithImpl<$Res>
 
 /// Create a copy of GetProfileState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? user = freezed,}) {
+@pragma('vm:prefer-inline') $Res call({Object? user = null,}) {
   return _then(_Success(
-freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
+null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
 as UserModel,
   ));
 }
